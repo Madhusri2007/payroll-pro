@@ -3,8 +3,6 @@ if (!extension_loaded('mongodb')) {
     die('MongoDB extension is not loaded!');
 }
 
-// Uses MONGO_URI environment variable on Render
-// Falls back to localhost for local development on your PC
 $mongoUri = getenv('MONGO_URI') ?: 'mongodb://localhost:27017';
 $manager  = new MongoDB\Driver\Manager($mongoUri);
 
