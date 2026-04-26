@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN a2enmod rewrite
 
- RUN echo "output_buffering = On" >> /usr/local/etc/php/php.ini && echo "default_charset = UTF-8" >> /usr/local/etc/php/php.ini
+RUN echo "output_buffering = On" >> /usr/local/etc/php/php.ini
 
 WORKDIR /var/www/html
 
