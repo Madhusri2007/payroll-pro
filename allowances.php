@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_allowance'])) {
            ['_id' => $existing->_id],
            ['amount' => $amount, 'note' => $note, 'updated_by' => $user['username']]
        );
-       $msg = "Updated $type for $emp_id — $month.";
+       $msg = "Updated $type for $emp_id â€” $month.";
    } else {
        insertDoc($manager, $dbName, $allowancesCollection, [
            'emp_id'     => $emp_id,
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_allowance'])) {
            'created_by' => $user['username'],
            'created_at' => date('Y-m-d H:i:s')
        ]);
-       $msg = "Added $type for $emp_id — $month.";
+       $msg = "Added $type for $emp_id â€” $month.";
    }
    $msgType = "success";
 }
@@ -104,7 +104,7 @@ layoutHeader('Allowances & Deductions');
    <div class="col-md-2 col-6">
        <div class="card border-0 bg-<?= $color ?> bg-opacity-10 text-center py-2">
            <div class="fw-bold text-<?= $color ?>"><?= htmlspecialchars($type) ?></div>
-           <div class="fs-6 fw-semibold">₹<?= number_format($total) ?></div>
+           <div class="fs-6 fw-semibold">â‚¹<?= number_format($total) ?></div>
        </div>
    </div>
    <?php endforeach; ?>
@@ -124,7 +124,7 @@ layoutHeader('Allowances & Deductions');
                    <div class="mb-3">
                        <label class="form-label fw-semibold">Employee</label>
                        <select name="emp_id" class="form-select" required>
-                           <option value="">— Select —</option>
+                           <option value="">â€” Select â€”</option>
                            <?php foreach ($employees as $emp): ?>
                            <option value="<?= htmlspecialchars($emp->emp_id) ?>">
                                <?= htmlspecialchars($emp->name) ?> (<?= htmlspecialchars($emp->emp_id) ?>)
@@ -147,7 +147,7 @@ layoutHeader('Allowances & Deductions');
                        </select>
                    </div>
                    <div class="mb-3">
-                       <label class="form-label fw-semibold">Amount (₹)</label>
+                       <label class="form-label fw-semibold">Amount (â‚¹)</label>
                        <input type="number" name="amount" class="form-control" required step="0.01" min="0">
                    </div>
                    <div class="mb-3">
@@ -193,10 +193,10 @@ layoutHeader('Allowances & Deductions');
                            $tc = $typeColors[$a->type ?? 'Other'] ?? 'secondary';
                        ?>
                        <tr>
-                           <td><?= htmlspecialchars($a->emp_id ?? '—') ?></td>
-                           <td><span class="badge bg-<?= $tc ?>"><?= htmlspecialchars($a->type ?? '—') ?></span></td>
-                           <td><strong>₹<?= number_format($a->amount ?? 0) ?></strong></td>
-                           <td><small class="text-muted"><?= htmlspecialchars($a->note ?? '—') ?></small></td>
+                           <td><?= htmlspecialchars($a->emp_id ?? 'â€”') ?></td>
+                           <td><span class="badge bg-<?= $tc ?>"><?= htmlspecialchars($a->type ?? 'â€”') ?></span></td>
+                           <td><strong>â‚¹<?= number_format($a->amount ?? 0) ?></strong></td>
+                           <td><small class="text-muted"><?= htmlspecialchars($a->note ?? 'â€”') ?></small></td>
                            <td>
                                <a href="?delete=<?= $a->_id ?>&month=<?= urlencode($filterMonth) ?>"
                                   onclick="return confirm('Delete this record?')"

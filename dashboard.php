@@ -13,7 +13,7 @@ if (is_array($sessionUser)) {
     $username = $sessionUser['username'];
     $role     = $sessionUser['role'];
 } else {
-    // Legacy string session — look up REAL role from DB
+    // Legacy string session â€” look up REAL role from DB
     $username = (string)$sessionUser;
     $dbUser   = findOne($manager, $dbName, $usersCollection, ['username' => $username]);
     $role     = ($dbUser && isset($dbUser->role) && $dbUser->role !== '')

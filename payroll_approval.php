@@ -123,13 +123,13 @@ layoutHeader('Payroll Approval');
                <tr>
                    <td class="text-muted"><?= $i + 1 ?></td>
                    <td>
-                       <strong><?= htmlspecialchars($r->name ?? '—') ?></strong><br>
+                       <strong><?= htmlspecialchars($r->name ?? 'â€”') ?></strong><br>
                        <small class="text-muted"><?= htmlspecialchars($r->emp_id ?? '') ?></small>
                    </td>
-                   <td><?= htmlspecialchars($r->month ?? '—') ?></td>
-                   <td>₹<?= number_format($r->gross ?? 0) ?></td>
-                   <td><strong>₹<?= number_format($r->net_pay ?? 0) ?></strong></td>
-                   <td><small><?= htmlspecialchars($r->generated_by ?? '—') ?></small></td>
+                   <td><?= htmlspecialchars($r->month ?? 'â€”') ?></td>
+                   <td>â‚¹<?= number_format($r->gross ?? 0) ?></td>
+                   <td><strong>â‚¹<?= number_format($r->net_pay ?? 0) ?></strong></td>
+                   <td><small><?= htmlspecialchars($r->generated_by ?? 'â€”') ?></small></td>
                    <td><span class="badge <?= $badgeClass ?>"><?= ucfirst($status) ?></span></td>
                    <?php if (in_array($role, ['admin', 'accountant'])): ?>
                    <td>
@@ -146,7 +146,7 @@ layoutHeader('Payroll Approval');
                            </button>
                        </form>
                        <?php else: ?>
-                       <small class="text-muted">by <?= htmlspecialchars($r->reviewed_by ?? '—') ?></small>
+                       <small class="text-muted">by <?= htmlspecialchars($r->reviewed_by ?? 'â€”') ?></small>
                        <?php endif; ?>
                    </td>
                    <?php endif; ?>

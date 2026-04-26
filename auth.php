@@ -19,10 +19,10 @@ function hasRole(...$roles) {
 
 /**
  * Role permissions map
- * admin      → full access
- * hr         → employees, payroll generate/view/edit/delete, leave, reports, allowances, approval
- * accountant → payroll view/edit/delete/approve, allowances, export, reports
- * staff      → view employees, view payroll (read-only)
+ * admin      â†’ full access
+ * hr         â†’ employees, payroll generate/view/edit/delete, leave, reports, allowances, approval
+ * accountant â†’ payroll view/edit/delete/approve, allowances, export, reports
+ * staff      â†’ view employees, view payroll (read-only)
  */
 function canDo($action) {
     $role = getCurrentUser()['role'] ?? '';

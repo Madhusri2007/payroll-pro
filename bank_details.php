@@ -145,20 +145,20 @@ layoutHeader('Bank Details & Salary Transfer');
                     // Mask account number: show only last 4 digits
                     $maskedAcc  = $accNum
                         ? str_repeat('*', max(0, strlen($accNum) - 4)) . substr($accNum, -4)
-                        : '—';
+                        : 'â€”';
                 ?>
                 <tr>
                     <td><strong><?= htmlspecialchars($empId) ?></strong></td>
-                    <td><?= htmlspecialchars($emp->name ?? '—') ?></td>
+                    <td><?= htmlspecialchars($emp->name ?? 'â€”') ?></td>
                     <td>
                         <span class="badge bg-primary bg-opacity-10 text-primary">
-                            <?= htmlspecialchars($emp->department ?? '—') ?>
+                            <?= htmlspecialchars($emp->department ?? 'â€”') ?>
                         </span>
                     </td>
                     <td>
                         <?php if ($hasBank): ?>
                             <i class="bi bi-bank text-success me-1"></i>
-                            <?= htmlspecialchars($emp->bank_name ?? '—') ?>
+                            <?= htmlspecialchars($emp->bank_name ?? 'â€”') ?>
                         <?php else: ?>
                             <span class="text-danger">
                                 <i class="bi bi-exclamation-triangle me-1"></i>Not Added
@@ -167,7 +167,7 @@ layoutHeader('Bank Details & Salary Transfer');
                     </td>
                     <td>
                         <span class="font-monospace">
-                            <?= $hasBank ? htmlspecialchars($maskedAcc) : '—' ?>
+                            <?= $hasBank ? htmlspecialchars($maskedAcc) : 'â€”' ?>
                         </span>
                         <?php if ($hasBank): ?>
                         <button class="btn btn-link btn-sm p-0 ms-1"
@@ -179,14 +179,14 @@ layoutHeader('Bank Details & Salary Transfer');
                         <?php endif; ?>
                     </td>
                     <td class="font-monospace">
-                        <?= $hasBank ? htmlspecialchars($emp->ifsc_code ?? '—') : '—' ?>
+                        <?= $hasBank ? htmlspecialchars($emp->ifsc_code ?? 'â€”') : 'â€”' ?>
                     </td>
                     <td>
                         <?php if ($hasBank): ?>
                         <span class="badge bg-light text-dark border">
                             <?= ucfirst($emp->account_type ?? 'savings') ?>
                         </span>
-                        <?php else: ?>—<?php endif; ?>
+                        <?php else: ?>â€”<?php endif; ?>
                     </td>
                     <td>
                         <?php if ($payroll): ?>

@@ -38,16 +38,16 @@ if (!$record) {
     exit();
 }
 
-// ── Safely read ALL fields with correct field names ──────────────────────────
+// â”€â”€ Safely read ALL fields with correct field names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Payroll is saved with: basic, hra, da, gross, pf, tax, net_pay
 // Employee extra info may come from employees collection
-$emp_id     = $record->emp_id     ?? '—';
-$name       = $record->name       ?? '—';
-$department = $record->department ?? '—';
-$month      = $record->month      ?? '—';
+$emp_id     = $record->emp_id     ?? 'â€”';
+$name       = $record->name       ?? 'â€”';
+$department = $record->department ?? 'â€”';
+$month      = $record->month      ?? 'â€”';
 $genBy      = $record->generated_by ?? $username;
 
-// Core salary fields — stored as 'basic' NOT 'basic_salary'
+// Core salary fields â€” stored as 'basic' NOT 'basic_salary'
 $basic = (float)($record->basic   ?? 0);
 $hra   = (float)($record->hra     ?? 0);
 $da    = (float)($record->da      ?? 0);
@@ -66,7 +66,7 @@ if ($net == 0 && $gross > 0) {
 
 // Fetch employee record for designation
 $emp         = findOne($manager, $dbName, $employeesCollection, ['emp_id' => $emp_id]);
-$designation = $emp->designation ?? '—';
+$designation = $emp->designation ?? 'â€”';
 
 // Calculate percentages for display
 $hraPct = ($basic > 0) ? round(($hra / $basic) * 100) : 40;
@@ -297,11 +297,11 @@ $status = $record->status ?? 'pending';
     <!-- Status Banner -->
     <div class="status-banner status-<?= $status ?>">
         <?php if ($status === 'approved'): ?>
-            ✅ Approved Payslip
+            âœ… Approved Payslip
         <?php elseif ($status === 'rejected'): ?>
-            ❌ Rejected — Contact HR
+            âŒ Rejected â€” Contact HR
         <?php else: ?>
-            ⏳ Pending Approval
+            â³ Pending Approval
         <?php endif; ?>
     </div>
 

@@ -87,37 +87,37 @@ layoutHeader('Edit Payroll');
    <div class="col-md-5">
        <div class="card shadow-sm">
            <div class="card-header bg-white fw-semibold">
-               <i class="bi bi-person me-2 text-primary"></i><?= htmlspecialchars($record->name ?? '—') ?>
+               <i class="bi bi-person me-2 text-primary"></i><?= htmlspecialchars($record->name ?? 'â€”') ?>
                <span class="text-muted ms-1 fw-normal">(<?= htmlspecialchars($record->emp_id ?? '') ?>)</span>
-               — <span class="badge bg-light text-dark"><?= htmlspecialchars($record->month ?? '') ?></span>
+               â€” <span class="badge bg-light text-dark"><?= htmlspecialchars($record->month ?? '') ?></span>
            </div>
            <div class="card-body">
                <form method="POST" id="editForm">
                    <div class="mb-3">
-                       <label class="form-label fw-semibold">Basic Salary (₹)</label>
+                       <label class="form-label fw-semibold">Basic Salary (â‚¹)</label>
                        <input type="number" name="basic" id="basic" class="form-control" step="0.01"
                               value="<?= $record->basic ?? 0 ?>" oninput="calcPreview()">
                    </div>
                    <div class="row g-2 mb-3">
                        <div class="col-6">
-                           <label class="form-label">HRA (₹)</label>
+                           <label class="form-label">HRA (â‚¹)</label>
                            <input type="number" name="hra" id="hra" class="form-control form-control-sm" step="0.01"
                                   value="<?= $record->hra ?? 0 ?>" oninput="calcPreview()">
                        </div>
                        <div class="col-6">
-                           <label class="form-label">DA (₹)</label>
+                           <label class="form-label">DA (â‚¹)</label>
                            <input type="number" name="da" id="da" class="form-control form-control-sm" step="0.01"
                                   value="<?= $record->da ?? 0 ?>" oninput="calcPreview()">
                        </div>
                    </div>
                    <div class="row g-2 mb-3">
                        <div class="col-6">
-                           <label class="form-label">PF Deduction (₹)</label>
+                           <label class="form-label">PF Deduction (â‚¹)</label>
                            <input type="number" name="pf" id="pf" class="form-control form-control-sm" step="0.01"
                                   value="<?= $record->pf ?? 0 ?>" oninput="calcPreview()">
                        </div>
                        <div class="col-6">
-                           <label class="form-label">Tax Deduction (₹)</label>
+                           <label class="form-label">Tax Deduction (â‚¹)</label>
                            <input type="number" name="tax" id="tax" class="form-control form-control-sm" step="0.01"
                                   value="<?= $record->tax ?? 0 ?>" oninput="calcPreview()">
                        </div>
@@ -153,7 +153,7 @@ function calcPreview() {
    const tax   = parseFloat(document.getElementById('tax').value)   || 0;
    const gross = basic + hra + da;
    const net   = gross - pf - tax;
-   const fmt   = v => '₹' + v.toLocaleString('en-IN', {minimumFractionDigits: 2});
+   const fmt   = v => 'â‚¹' + v.toLocaleString('en-IN', {minimumFractionDigits: 2});
 
    document.getElementById('previewArea').innerHTML = `
        <table class="table table-sm mb-0">

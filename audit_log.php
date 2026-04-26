@@ -78,10 +78,10 @@ layoutHeader('Audit Log');
                <?php foreach ($logs as $i => $log): ?>
                <tr>
                    <td class="text-muted"><?= $i + 1 ?></td>
-                   <td><small><?= htmlspecialchars($log->created_at ?? '—') ?></small></td>
+                   <td><small><?= htmlspecialchars($log->created_at ?? 'â€”') ?></small></td>
                    <td>
                        <span class="badge bg-primary bg-opacity-10 text-primary">
-                           <?= htmlspecialchars($log->user ?? '—') ?>
+                           <?= htmlspecialchars($log->user ?? 'â€”') ?>
                        </span>
                    </td>
                    <td>
@@ -91,10 +91,10 @@ layoutHeader('Audit Log');
                           : (str_contains($action, 'add') || str_contains($action, 'create') ? 'success'
                           : (str_contains($action, 'login') ? 'info' : 'secondary'));
                        ?>
-                       <span class="badge bg-<?= $ac ?>"><?= htmlspecialchars($log->action ?? '—') ?></span>
+                       <span class="badge bg-<?= $ac ?>"><?= htmlspecialchars($log->action ?? 'â€”') ?></span>
                    </td>
-                   <td><small class="text-muted"><?= htmlspecialchars($log->details ?? '—') ?></small></td>
-                   <td><small class="text-muted"><?= htmlspecialchars($log->ip ?? '—') ?></small></td>
+                   <td><small class="text-muted"><?= htmlspecialchars($log->details ?? 'â€”') ?></small></td>
+                   <td><small class="text-muted"><?= htmlspecialchars($log->ip ?? 'â€”') ?></small></td>
                </tr>
                <?php endforeach; ?>
                <?php endif; ?>

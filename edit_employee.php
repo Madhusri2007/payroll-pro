@@ -253,15 +253,15 @@ layoutHeader('Edit Employee');
                 <table class="table table-sm mb-0">
                     <tr>
                         <td class="text-muted small">Created</td>
-                        <td class="small"><?= htmlspecialchars($emp->created_at ?? '—') ?></td>
+                        <td class="small"><?= htmlspecialchars($emp->created_at ?? 'â€”') ?></td>
                     </tr>
                     <tr>
                         <td class="text-muted small">Last Updated</td>
-                        <td class="small"><?= htmlspecialchars($emp->updated_at ?? '—') ?></td>
+                        <td class="small"><?= htmlspecialchars($emp->updated_at ?? 'â€”') ?></td>
                     </tr>
                     <tr>
                         <td class="text-muted small">Updated By</td>
-                        <td class="small"><?= htmlspecialchars($emp->updated_by ?? '—') ?></td>
+                        <td class="small"><?= htmlspecialchars($emp->updated_by ?? 'â€”') ?></td>
                     </tr>
                 </table>
             </div>

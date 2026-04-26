@@ -130,15 +130,15 @@ layoutHeader('View Payroll');
                 <tr>
                     <td class="text-muted"><?= $i + 1 ?></td>
                     <td>
-                        <strong><?= htmlspecialchars($r->name ?? '—') ?></strong><br>
+                        <strong><?= htmlspecialchars($r->name ?? 'â€”') ?></strong><br>
                         <small class="text-muted"><?= htmlspecialchars($r->emp_id ?? '') ?></small>
                     </td>
-                    <td><?= htmlspecialchars($r->department ?? '—') ?></td>
-                    <td><?= htmlspecialchars($r->month ?? '—') ?></td>
-                    <td>₹<?= number_format($r->basic ?? 0) ?></td>
-                    <td>₹<?= number_format($r->gross ?? 0) ?></td>
-                    <td class="text-danger">₹<?= number_format($deductions) ?></td>
-                    <td><strong>₹<?= number_format($r->net_pay ?? 0) ?></strong></td>
+                    <td><?= htmlspecialchars($r->department ?? 'â€”') ?></td>
+                    <td><?= htmlspecialchars($r->month ?? 'â€”') ?></td>
+                    <td>â‚¹<?= number_format($r->basic ?? 0) ?></td>
+                    <td>â‚¹<?= number_format($r->gross ?? 0) ?></td>
+                    <td class="text-danger">â‚¹<?= number_format($deductions) ?></td>
+                    <td><strong>â‚¹<?= number_format($r->net_pay ?? 0) ?></strong></td>
                     <td><span class="badge <?= $badgeClass ?>"><?= ucfirst($status) ?></span></td>
                     <?php if (in_array($role, ['admin', 'hr', 'accountant'])): ?>
                     <td>

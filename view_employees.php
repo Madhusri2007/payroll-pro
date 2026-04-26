@@ -76,7 +76,7 @@ layoutHeader('View Employees');
                         <i class="bi bi-people display-6 d-block mb-2"></i>
                         No employees found.
                         <?php if (in_array($role, ['admin', 'hr'])): ?>
-                        <a href="add_employee.php">Add your first employee →</a>
+                        <a href="add_employee.php">Add your first employee â†’</a>
                         <?php endif; ?>
                     </td>
                 </tr>
@@ -84,15 +84,15 @@ layoutHeader('View Employees');
                 <?php foreach ($employees as $i => $emp): ?>
                 <tr>
                     <td class="text-muted"><?= $i + 1 ?></td>
-                    <td><strong><?= htmlspecialchars($emp->emp_id ?? '—') ?></strong></td>
-                    <td><?= htmlspecialchars($emp->name ?? '—') ?></td>
+                    <td><strong><?= htmlspecialchars($emp->emp_id ?? 'â€”') ?></strong></td>
+                    <td><?= htmlspecialchars($emp->name ?? 'â€”') ?></td>
                     <td>
                         <span class="badge bg-primary bg-opacity-10 text-primary">
-                            <?= htmlspecialchars($emp->department ?? '—') ?>
+                            <?= htmlspecialchars($emp->department ?? 'â€”') ?>
                         </span>
                     </td>
-                    <td><?= htmlspecialchars($emp->designation ?? '—') ?></td>
-                    <td><strong>₹<?= number_format($emp->basic_salary ?? 0) ?></strong></td>
+                    <td><?= htmlspecialchars($emp->designation ?? 'â€”') ?></td>
+                    <td><strong>â‚¹<?= number_format($emp->basic_salary ?? 0) ?></strong></td>
                     <td>
                         <?php $status = $emp->status ?? 'active'; ?>
                         <span class="badge <?= $status === 'active' ? 'bg-success' : 'bg-secondary' ?>">

@@ -269,7 +269,7 @@ layoutHeader('Add Employee');
                                placeholder="Enter account number"
                                pattern="[0-9]{9,18}" title="9 to 18 digit account number"
                                required oninput="this.value=this.value.replace(/\D/g,'')">
-                        <div class="form-text">Numbers only, 9–18 digits</div>
+                        <div class="form-text">Numbers only, 9â€“18 digits</div>
                     </div>
                     <div class="col-md-4">
                         <label class="form-label fw-semibold">
@@ -288,7 +288,7 @@ layoutHeader('Add Employee');
                         <label class="form-label fw-semibold">UPI ID / Phone Pay</label>
                         <input type="text" name="upi_id" class="form-control"
                                placeholder="e.g. name@upi (optional)">
-                        <div class="form-text">Optional — for UPI salary transfer</div>
+                        <div class="form-text">Optional â€” for UPI salary transfer</div>
                     </div>
                 </div>
 
@@ -356,12 +356,12 @@ function validateIFSC(input) {
     const pattern = /^[A-Z]{4}0[A-Z0-9]{6}$/;
     if (!val) { msg.textContent = ''; return; }
     if (pattern.test(val)) {
-        msg.textContent  = '✓ Valid IFSC format';
+        msg.textContent  = 'âœ“ Valid IFSC format';
         msg.className    = 'form-text text-success';
         input.classList.remove('is-invalid');
         input.classList.add('is-valid');
     } else {
-        msg.textContent  = '✗ Invalid IFSC. Format: ABCD0123456';
+        msg.textContent  = 'âœ— Invalid IFSC. Format: ABCD0123456';
         msg.className    = 'form-text text-danger';
         input.classList.add('is-invalid');
         input.classList.remove('is-valid');

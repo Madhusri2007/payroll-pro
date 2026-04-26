@@ -31,7 +31,7 @@ $defaultUsers = [
     ['username' => 'staff',      'password' => 'staff123',   'role' => 'staff'],
 ];
 
-echo '<h6 class="fw-semibold mb-3">Default Users — Creating / Updating roles</h6>';
+echo '<h6 class="fw-semibold mb-3">Default Users â€” Creating / Updating roles</h6>';
 
 foreach ($defaultUsers as $u) {
     $exists = findOne($manager, $dbName, $usersCollection, ['username' => $u['username']]);
@@ -41,7 +41,7 @@ foreach ($defaultUsers as $u) {
             ['username' => $u['username']],
             ['role' => $u['role'], 'password' => password_hash($u['password'], PASSWORD_DEFAULT)]
         );
-        ok("Updated user: {$u['username']} — role set to '{$u['role']}'");
+        ok("Updated user: {$u['username']} â€” role set to '{$u['role']}'");
     } else {
         insertDoc($manager, $dbName, $usersCollection, [
             'username'   => $u['username'],

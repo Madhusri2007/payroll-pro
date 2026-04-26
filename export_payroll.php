@@ -106,7 +106,7 @@ layoutHeader('Export Payroll');
        <div class="card text-center border-0 bg-success bg-opacity-10">
            <div class="card-body py-2">
                <div class="small text-muted">Total Gross</div>
-               <div class="fs-6 fw-bold text-success">₹<?= number_format($totalGross) ?></div>
+               <div class="fs-6 fw-bold text-success">â‚¹<?= number_format($totalGross) ?></div>
            </div>
        </div>
    </div>
@@ -114,7 +114,7 @@ layoutHeader('Export Payroll');
        <div class="card text-center border-0 bg-danger bg-opacity-10">
            <div class="card-body py-2">
                <div class="small text-muted">Total Deductions</div>
-               <div class="fs-6 fw-bold text-danger">₹<?= number_format($totalDeduct) ?></div>
+               <div class="fs-6 fw-bold text-danger">â‚¹<?= number_format($totalDeduct) ?></div>
            </div>
        </div>
    </div>
@@ -122,7 +122,7 @@ layoutHeader('Export Payroll');
        <div class="card text-center border-0 bg-warning bg-opacity-10">
            <div class="card-body py-2">
                <div class="small text-muted">Total Net Pay</div>
-               <div class="fs-6 fw-bold text-warning">₹<?= number_format($totalNet) ?></div>
+               <div class="fs-6 fw-bold text-warning">â‚¹<?= number_format($totalNet) ?></div>
            </div>
        </div>
    </div>
@@ -131,7 +131,7 @@ layoutHeader('Export Payroll');
 <!-- Preview Table -->
 <div class="card shadow-sm">
    <div class="card-header bg-white fw-semibold">
-       <i class="bi bi-table me-2"></i>Preview — <?= htmlspecialchars($filterMonth) ?>
+       <i class="bi bi-table me-2"></i>Preview â€” <?= htmlspecialchars($filterMonth) ?>
    </div>
    <div class="card-body p-0">
        <div class="table-responsive">
@@ -162,15 +162,15 @@ layoutHeader('Export Payroll');
                    $bc = match($st) { 'approved' => 'bg-success', 'rejected' => 'bg-danger', default => 'bg-warning text-dark' };
                ?>
                <tr>
-                   <td><?= htmlspecialchars($r->emp_id ?? '—') ?></td>
-                   <td><?= htmlspecialchars($r->name ?? '—') ?></td>
-                   <td><?= htmlspecialchars($r->department ?? '—') ?></td>
-                   <td><?= htmlspecialchars($r->month ?? '—') ?></td>
-                   <td>₹<?= number_format($r->basic ?? 0) ?></td>
-                   <td>₹<?= number_format($r->gross ?? 0) ?></td>
-                   <td class="text-danger">₹<?= number_format($r->pf ?? 0) ?></td>
-                   <td class="text-danger">₹<?= number_format($r->tax ?? 0) ?></td>
-                   <td><strong>₹<?= number_format($r->net_pay ?? 0) ?></strong></td>
+                   <td><?= htmlspecialchars($r->emp_id ?? 'â€”') ?></td>
+                   <td><?= htmlspecialchars($r->name ?? 'â€”') ?></td>
+                   <td><?= htmlspecialchars($r->department ?? 'â€”') ?></td>
+                   <td><?= htmlspecialchars($r->month ?? 'â€”') ?></td>
+                   <td>â‚¹<?= number_format($r->basic ?? 0) ?></td>
+                   <td>â‚¹<?= number_format($r->gross ?? 0) ?></td>
+                   <td class="text-danger">â‚¹<?= number_format($r->pf ?? 0) ?></td>
+                   <td class="text-danger">â‚¹<?= number_format($r->tax ?? 0) ?></td>
+                   <td><strong>â‚¹<?= number_format($r->net_pay ?? 0) ?></strong></td>
                    <td><span class="badge <?= $bc ?>"><?= ucfirst($st) ?></span></td>
                </tr>
                <?php endforeach; ?>

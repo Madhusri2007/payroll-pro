@@ -160,7 +160,7 @@ layoutHeader('Manage Users');
                             <small class="text-muted fw-normal">(min 6 chars)</small>
                         </label>
                         <input type="password" name="password" class="form-control"
-                               placeholder="••••••••" minlength="6" required>
+                               placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" minlength="6" required>
                     </div>
 
                     <div class="mb-3">
@@ -283,8 +283,8 @@ layoutHeader('Manage Users');
                             </td>
                             <td class="text-muted small">
                                 <?php
-                                // created_by might be array or string — handle both
-                                $createdBy = $u->created_by ?? '—';
+                                // created_by might be array or string â€” handle both
+                                $createdBy = $u->created_by ?? 'â€”';
                                 if (is_array($createdBy)) {
                                     $createdBy = $createdBy['username'] ?? 'system';
                                 }
@@ -292,7 +292,7 @@ layoutHeader('Manage Users');
                                 ?>
                             </td>
                             <td class="text-muted small">
-                                <?= htmlspecialchars((string)($u->created_at ?? '—')) ?>
+                                <?= htmlspecialchars((string)($u->created_at ?? 'â€”')) ?>
                             </td>
                             <td>
                                 <?php if (!$isProtected): ?>

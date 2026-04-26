@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-// Safe session read — always re-fetch role from DB if session is legacy string
+// Safe session read â€” always re-fetch role from DB if session is legacy string
 $sessionUser = $_SESSION['user'];
 if (is_array($sessionUser)) {
     $username = $sessionUser['username'];
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'created_at'   => date('Y-m-d H:i:s')
                     ]);
 
-                    $msg     = "Payroll generated for " . htmlspecialchars($emp->name) . " — $month. Net Pay: Rs." . number_format($net, 2);
+                    $msg     = "Payroll generated for " . htmlspecialchars($emp->name) . " â€” $month. Net Pay: Rs." . number_format($net, 2);
                     $msgType = "success";
                 }
             }

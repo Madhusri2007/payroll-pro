@@ -95,16 +95,16 @@ layoutHeader('Payslips');
                 <?php foreach ($records as $i => $r): ?>
                 <tr>
                     <td class="text-muted"><?= $i + 1 ?></td>
-                    <td><strong><?= htmlspecialchars($r->emp_id ?? '—') ?></strong></td>
-                    <td><?= htmlspecialchars($r->name ?? '—') ?></td>
+                    <td><strong><?= htmlspecialchars($r->emp_id ?? 'â€”') ?></strong></td>
+                    <td><?= htmlspecialchars($r->name ?? 'â€”') ?></td>
                     <td>
                         <span class="badge bg-primary bg-opacity-10 text-primary">
-                            <?= htmlspecialchars($r->department ?? '—') ?>
+                            <?= htmlspecialchars($r->department ?? 'â€”') ?>
                         </span>
                     </td>
                     <td>
                         <span class="badge bg-warning bg-opacity-10 text-warning-emphasis">
-                            <?= htmlspecialchars($r->month ?? '—') ?>
+                            <?= htmlspecialchars($r->month ?? 'â€”') ?>
                         </span>
                     </td>
                     <td>Rs.<?= number_format($r->gross ?? 0, 2) ?></td>

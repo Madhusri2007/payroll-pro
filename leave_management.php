@@ -107,7 +107,7 @@ layoutHeader('Leave Management');
                    <div class="mb-3">
                        <label class="form-label fw-semibold">Employee</label>
                        <select name="emp_id" id="empSel" class="form-select" required onchange="fillName()">
-                           <option value="">— Select —</option>
+                           <option value="">â€” Select â€”</option>
                            <?php foreach ($employees as $emp): ?>
                            <option value="<?= htmlspecialchars($emp->emp_id) ?>"
                                    data-name="<?= htmlspecialchars($emp->name) ?>">
@@ -187,21 +187,21 @@ layoutHeader('Leave Management');
                        ?>
                        <tr>
                            <td>
-                               <strong><?= htmlspecialchars($l->emp_name ?? '—') ?></strong><br>
+                               <strong><?= htmlspecialchars($l->emp_name ?? 'â€”') ?></strong><br>
                                <small class="text-muted"><?= htmlspecialchars($l->emp_id ?? '') ?></small>
                            </td>
-                           <td><span class="badge bg-info text-dark"><?= htmlspecialchars($l->leave_type ?? '—') ?></span></td>
-                           <td><?= htmlspecialchars($l->from_date ?? '—') ?></td>
-                           <td><?= htmlspecialchars($l->to_date ?? '—') ?></td>
-                           <td><?= $l->days ?? '—' ?></td>
+                           <td><span class="badge bg-info text-dark"><?= htmlspecialchars($l->leave_type ?? 'â€”') ?></span></td>
+                           <td><?= htmlspecialchars($l->from_date ?? 'â€”') ?></td>
+                           <td><?= htmlspecialchars($l->to_date ?? 'â€”') ?></td>
+                           <td><?= $l->days ?? 'â€”' ?></td>
                            <td><span class="badge <?= $bc ?>"><?= ucfirst($st) ?></span></td>
                            <?php if (in_array($role, ['admin', 'hr'])): ?>
                            <td>
                                <?php if ($st === 'pending'): ?>
                                <form method="POST" class="d-inline">
                                    <input type="hidden" name="leave_id" value="<?= $l->_id ?>">
-                                   <button name="action" value="approved" class="btn btn-success btn-sm">✓</button>
-                                   <button name="action" value="rejected" class="btn btn-danger btn-sm">✗</button>
+                                   <button name="action" value="approved" class="btn btn-success btn-sm">âœ“</button>
+                                   <button name="action" value="rejected" class="btn btn-danger btn-sm">âœ—</button>
                                </form>
                                <?php endif; ?>
                                <a href="?delete=<?= $l->_id ?>"
