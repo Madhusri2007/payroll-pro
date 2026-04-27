@@ -127,8 +127,8 @@ layoutHeader('Payroll Approval');
                        <small class="text-muted"><?= htmlspecialchars($r->emp_id ?? '') ?></small>
                    </td>
                    <td><?= htmlspecialchars($r->month ?? 'â€”') ?></td>
-                   <td>â‚¹<?= number_format($r->gross ?? 0) ?></td>
-                   <td><strong>â‚¹<?= number_format($r->net_pay ?? 0) ?></strong></td>
+                   <td>&#8377;<?= number_format($r->gross ?? 0) ?></td>
+                   <td><strong>&#8377;<?= number_format($r->net_pay ?? 0) ?></strong></td>
                    <td><small><?= htmlspecialchars($r->generated_by ?? 'â€”') ?></small></td>
                    <td><span class="badge <?= $badgeClass ?>"><?= ucfirst($status) ?></span></td>
                    <?php if (in_array($role, ['admin', 'accountant'])): ?>

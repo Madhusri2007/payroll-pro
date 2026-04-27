@@ -104,7 +104,7 @@ layoutHeader('Allowances & Deductions');
    <div class="col-md-2 col-6">
        <div class="card border-0 bg-<?= $color ?> bg-opacity-10 text-center py-2">
            <div class="fw-bold text-<?= $color ?>"><?= htmlspecialchars($type) ?></div>
-           <div class="fs-6 fw-semibold">â‚¹<?= number_format($total) ?></div>
+           <div class="fs-6 fw-semibold">&#8377;<?= number_format($total) ?></div>
        </div>
    </div>
    <?php endforeach; ?>
@@ -147,7 +147,7 @@ layoutHeader('Allowances & Deductions');
                        </select>
                    </div>
                    <div class="mb-3">
-                       <label class="form-label fw-semibold">Amount (â‚¹)</label>
+                       <label class="form-label fw-semibold">Amount (&#8377;)</label>
                        <input type="number" name="amount" class="form-control" required step="0.01" min="0">
                    </div>
                    <div class="mb-3">
@@ -195,7 +195,7 @@ layoutHeader('Allowances & Deductions');
                        <tr>
                            <td><?= htmlspecialchars($a->emp_id ?? 'â€”') ?></td>
                            <td><span class="badge bg-<?= $tc ?>"><?= htmlspecialchars($a->type ?? 'â€”') ?></span></td>
-                           <td><strong>â‚¹<?= number_format($a->amount ?? 0) ?></strong></td>
+                           <td><strong>&#8377;<?= number_format($a->amount ?? 0) ?></strong></td>
                            <td><small class="text-muted"><?= htmlspecialchars($a->note ?? 'â€”') ?></small></td>
                            <td>
                                <a href="?delete=<?= $a->_id ?>&month=<?= urlencode($filterMonth) ?>"

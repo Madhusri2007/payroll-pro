@@ -94,30 +94,30 @@ layoutHeader('Edit Payroll');
            <div class="card-body">
                <form method="POST" id="editForm">
                    <div class="mb-3">
-                       <label class="form-label fw-semibold">Basic Salary (â‚¹)</label>
+                       <label class="form-label fw-semibold">Basic Salary (&#8377;)</label>
                        <input type="number" name="basic" id="basic" class="form-control" step="0.01"
                               value="<?= $record->basic ?? 0 ?>" oninput="calcPreview()">
                    </div>
                    <div class="row g-2 mb-3">
                        <div class="col-6">
-                           <label class="form-label">HRA (â‚¹)</label>
+                           <label class="form-label">HRA (&#8377;)</label>
                            <input type="number" name="hra" id="hra" class="form-control form-control-sm" step="0.01"
                                   value="<?= $record->hra ?? 0 ?>" oninput="calcPreview()">
                        </div>
                        <div class="col-6">
-                           <label class="form-label">DA (â‚¹)</label>
+                           <label class="form-label">DA (&#8377;)</label>
                            <input type="number" name="da" id="da" class="form-control form-control-sm" step="0.01"
                                   value="<?= $record->da ?? 0 ?>" oninput="calcPreview()">
                        </div>
                    </div>
                    <div class="row g-2 mb-3">
                        <div class="col-6">
-                           <label class="form-label">PF Deduction (â‚¹)</label>
+                           <label class="form-label">PF Deduction (&#8377;)</label>
                            <input type="number" name="pf" id="pf" class="form-control form-control-sm" step="0.01"
                                   value="<?= $record->pf ?? 0 ?>" oninput="calcPreview()">
                        </div>
                        <div class="col-6">
-                           <label class="form-label">Tax Deduction (â‚¹)</label>
+                           <label class="form-label">Tax Deduction (&#8377;)</label>
                            <input type="number" name="tax" id="tax" class="form-control form-control-sm" step="0.01"
                                   value="<?= $record->tax ?? 0 ?>" oninput="calcPreview()">
                        </div>

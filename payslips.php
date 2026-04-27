@@ -110,7 +110,7 @@ layoutHeader('Payslips');
                     <td>Rs.<?= number_format($r->gross ?? 0, 2) ?></td>
                     <td>
                         <strong class="text-success">
-                            Rs.<?= number_format($r->net_pay ?? 0, 2) ?>
+                            &#8377;<?= number_format($r->net_pay ?? 0, 2) ?>
                         </strong>
                     </td>
                     <td>

@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'created_at'   => date('Y-m-d H:i:s')
                     ]);
 
-                    $msg     = "Payroll generated for " . htmlspecialchars($emp->name) . " â€” $month. Net Pay: Rs." . number_format($net, 2);
+                    $msg     = "Payroll generated for " . htmlspecialchars($emp->name) . " â€” $month. Net Pay: &#8377;" . number_format($net, 2);
                     $msgType = "success";
                 }
             }

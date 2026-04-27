@@ -135,10 +135,10 @@ layoutHeader('View Payroll');
                     </td>
                     <td><?= htmlspecialchars($r->department ?? 'â€”') ?></td>
                     <td><?= htmlspecialchars($r->month ?? 'â€”') ?></td>
-                    <td>â‚¹<?= number_format($r->basic ?? 0) ?></td>
-                    <td>â‚¹<?= number_format($r->gross ?? 0) ?></td>
-                    <td class="text-danger">â‚¹<?= number_format($deductions) ?></td>
-                    <td><strong>â‚¹<?= number_format($r->net_pay ?? 0) ?></strong></td>
+                    <td>&#8377;<?= number_format($r->basic ?? 0) ?></td>
+                    <td>&#8377;<?= number_format($r->gross ?? 0) ?></td>
+                    <td class="text-danger">&#8377;<?= number_format($deductions) ?></td>
+                    <td><strong>&#8377;<?= number_format($r->net_pay ?? 0) ?></strong></td>
                     <td><span class="badge <?= $badgeClass ?>"><?= ucfirst($status) ?></span></td>
                     <?php if (in_array($role, ['admin', 'hr', 'accountant'])): ?>
                     <td>

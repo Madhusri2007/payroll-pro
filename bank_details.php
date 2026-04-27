@@ -97,7 +97,7 @@ layoutHeader('Bank Details & Salary Transfer');
     <div class="col-md-3">
         <div class="card shadow-sm text-center p-3">
             <div class="text-warning fs-2 fw-bold">
-                Rs.<?= number_format($totalTransfer, 0) ?>
+                &#8377;<?= number_format($totalTransfer, 0) ?>
             </div>
             <div class="text-muted small">Total Transfer This Month</div>
         </div>
@@ -191,7 +191,7 @@ layoutHeader('Bank Details & Salary Transfer');
                     <td>
                         <?php if ($payroll): ?>
                             <strong class="text-success">
-                                Rs.<?= number_format($netPay, 2) ?>
+                                &#8377;<?= number_format($netPay, 2) ?>
                             </strong>
                         <?php else: ?>
                             <span class="text-muted small">No payroll</span>

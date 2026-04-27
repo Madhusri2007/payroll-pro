@@ -92,7 +92,7 @@ layoutHeader('View Employees');
                         </span>
                     </td>
                     <td><?= htmlspecialchars($emp->designation ?? 'â€”') ?></td>
-                    <td><strong>â‚¹<?= number_format($emp->basic_salary ?? 0) ?></strong></td>
+                    <td><strong>&#8377;<?= number_format($emp->basic_salary ?? 0) ?></strong></td>
                     <td>
                         <?php $status = $emp->status ?? 'active'; ?>
                         <span class="badge <?= $status === 'active' ? 'bg-success' : 'bg-secondary' ?>">
