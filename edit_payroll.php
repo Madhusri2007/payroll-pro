@@ -153,7 +153,7 @@ function calcPreview() {
    const tax   = parseFloat(document.getElementById('tax').value)   || 0;
    const gross = basic + hra + da;
    const net   = gross - pf - tax;
-   const fmt   = v => 'â‚¹' + v.toLocaleString('en-IN', {minimumFractionDigits: 2});
+    const fmt   = v => '₹' + v.toLocaleString('en-IN', {minimumFractionDigits: 2});
 
    document.getElementById('previewArea').innerHTML = `
        <table class="table table-sm mb-0">
